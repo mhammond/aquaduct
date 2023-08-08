@@ -1,0 +1,22 @@
+[package]
+name = "aquaduct"
+version = "0.1.0"
+edition = "2021"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[lib]
+crate-type = ["cdylib", "lib"]
+name = "aquaduct"
+
+[dependencies]
+async-channel = "1.9.0"
+url = "2"
+parking_lot = "0.12"
+thiserror = "1.0"
+uniffi = { path = "../uniffi-rs/uniffi", features = ["tokio", "cli"] }
+reqwest = "0.11"
+tokio = { version = "1.24.1", features = ["macros"] }
+
+[dev-dependencies]
+uniffi = {path = "../uniffi-rs/uniffi", features = ["bindgen-tests"] }
